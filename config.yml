@@ -1,11 +1,12 @@
 #############################################################################
-# Config for ASkyblock V${version}
+# Config for AcidIsland V${version}
 # It is recommended that you check at least these settings:
 #
 # 1. island distance - the distance between islands. If upgrading set to what you had.
 # 2. resetmoney (general section) - set to true so that everyone starts with nothing
 # 3. islandLevel (general section) - the height you want your islands to float
-# 4. protectionRange - how big a player's island is at the start
+# 4. sealevel (general section) - the height of the sea
+# 5. protectionRange - how big a player's island is at the start
 #
 ##############################################################################
 
@@ -15,25 +16,25 @@ island:
    # Space between islands in blocks - NEVER change this mid-game.
    # Values for a new world:
    # 400 - puts players distance enough that they usually cannot see each other
-   # 200 - allows some expansion of the protected zone (recommended)
+   # 200 - allows some expansion of the protected zone
    # 110 - for compatibility with established worlds. Cozy.
    # 50 - minimum - not recommended
    # IF YOU ARE UPGRADING YOU MUST USE YOUR OLD VALUE EXACTLY, E.G., 110
-   # OR RESET YOUR WORLD
-   # Value must be an even number
+   #
+   # Value must be an even number.
 
    distance: 200
 
    # Default protection range (even number). Min = 0, Recommended = 100
    # Value must be at least 16 blocks less than the island distance unless you set
    # overridelimit: true below.
-   # Use this permission to set for different groups: askyblock.island.range.<number>
+   # Use this permission to set for different groups: acidisland.island.range.<number>
    # Larger values will take longer to calculate the island level
-   # Admins can change protection sizes for players individually using /asadmin setrange
+   # Admins can change protection sizes for players individually using /acid setrange
    protectionRange: 100
 
-   # If you want to have protection range = distance set the following to true.
-   # It may result in incomplete deletion of islands. Not recommended, but not fatal.
+   # If you want to try to have protection range = distance set the following to true.
+   # It may result is incomplete deletion of islands. Not recommended.
    overridelimit: false
    
    # If your distance and protectionRange are the same value and you see blocks not
@@ -48,16 +49,16 @@ island:
    # If none of this makes sense, leave it at 0,0.
    startx: 0
    startz: 0
-
+   
    # Default max team size
-   # Use this permission to set for specific user groups: askyblock.team.maxsize.<number> 
+   # Use this permission to set for specific user groups: acidisland.team.maxsize.<number> 
    # Permission size cannot be less than the default. 
    maxteamsize: 4
 
    # Items that will be in the chest when the player starts an island
    # Must be in Bukkit Materials format. Format is <Material>:<Qty>
-   # or <Material>:<Data>:<Qty>
-   # Use <Data> to set the durability of a item or to select sub-items/colors.
+   # or <Material>:<Damage>:<Qty>
+   # Use <Damage> to set the durability of a item or to select sub-items/colors.
    # 
    # Spawn Eggs must be defined by name, e.g., MONSTER_EGG:PIG
    #
@@ -82,17 +83,16 @@ island:
    # Check console for errors and guidance after reloading configuration
    # Schematics can override this - see schematicsection
 
-   chestItems: 'ICE:2 MELON:1 TORCH:2 BONE:1 LAVA_BUCKET:1 PUMPKIN_SEEDS:1 SUGAR_CANE:1 RED_MUSHROOM:1 BROWN_MUSHROOM:1 CACTUS:1 BREAD:1 WHEAT:1 LEATHER_BOOTS:1 LEATHER_HELMET:1 LEATHER_CHESTPLATE:1 LEATHER_LEGGINGS:1'
+   chestItems: 'MELON:1 TORCH:2 BONE:1 LAVA_BUCKET:1 PUMPKIN_SEEDS:1 SUGAR_CANE:1 RED_MUSHROOM:1 BROWN_MUSHROOM:1 CACTUS:1 BREAD:1 WHEAT:1 POTION:WATER_BREATHING:1:EXTENDED::1 LEATHER_BOOTS:1 LEATHER_HELMET:1 LEATHER_CHESTPLATE:1 LEATHER_LEGGINGS:1'
 
    # Default island companion. Set schematic-specific companions in the schematicsection
    # Options are: COW, PIG, SHEEP, CHICKEN, VILLAGER, HORSE, IRON_GOLEM, OCELOT,
    # RABBIT, WOLF or NOTHING. Default is COW.
 
    companion: COW
-
-   # Default list of names, picked at random that will apply to the companion
+   # This is a list of default names, picked at random that will apply to the companion
    # You can add more if you like. If none are listed, the companion will not be
-   # named.
+   # named. Color codes work using &
    # Set schematic-specific companion names in the schematicsection
    companionnames:
    - "&9[player]'s cow"
@@ -207,7 +207,7 @@ island:
    # Allow pistons to push outside of the protected area (maybe to make bridges)
    allowpistonpush: true
 
-# General Settings
+# General settings
 general:
    # Check for updates - this will tell Ops and the console if there is a new
    # version available. It contacts dev.bukkit.org to request the latest version
@@ -218,16 +218,17 @@ general:
    # Minimum is 0, which means you are playing sky block!
    # If sea level is less than about 10, then players will drop right through it
    # if it exists. Makes for an interesting variation on sky block.
-   sealevel: 0
+   sealevel: 50
 
    # Island level - the height of the island.
    # Height should not be lower than sea level, but can be if you have an
-   # island schematic that supports it
+   # island schematic that supports it.
+   # Set sealevel and islandheight to about 30 and slimes may spawn on islands.
    # Lowest level is 5
-   islandlevel: 120
+   islandlevel: 50
 
    # Name of the world - if it does not exist then it will be generated
-   worldName: ASkyBlock
+   worldName: AcidIsland
    
    # Maximum number of islands. Set to 0 for unlimited. 
    # If the number of islands is greater than this number, no new islands will be
@@ -243,7 +244,7 @@ general:
    # the nether will not occur. Other plugins may still enable
    # portal usage.
    # Note: Some challenges will not be possible if there is no nether.
-   # Note that with a standard nether all players arrive at the same portal and entering a
+   # Note that in the standard Nether, all players arrive at the same portal and entering a
    # portal will return them back to their islands.
    createnether: true
 
@@ -300,7 +301,7 @@ general:
    #- "asadmin lock [player]"
    #- "[SELF] balance"
    #- "some other command"
-
+   
    # Visitor banned commands: Visitors to islands cannot use these commands
    visitorbannedcommands:
    - spawner
@@ -313,23 +314,24 @@ general:
    # A fully health player has 20 health points. Players will regen some health
    # so the default will give players about 3 seconds to get out the acid
    # 0 = no damage, 10 = default damage, 20 = instant death
-   aciddamage: 0
+   aciddamage: 10
    # Damage that monsters will experience.
-   mobaciddamage: 0
-   # Damage that rain does.
-   raindamage: 0
+   mobaciddamage: 10
+   # Damage that rain does. Acid rain.
+   raindamage: 1
    # Damage that animals will experience in acid.
-   animaldamage: 0
+   animaldamage: 2
    # Damage chickens in acid - true or false - chickens tend to go swimming...
    damagechickens: false
 
    # Damage type to apply in addition to acid damage
-   # Types can be : SLOW, SLOW_DIGGING, CONFUSION,BLINDNESS, HUNGER, WEAKNESS and POISON
+   # Types can be : SLOW, SLOW_DIGGING, CONFUSION, BLINDNESS, HUNGER, WEAKNESS and POISON
    # If you just want these to act, then make the acid damage 0 above
    # Note - these are potion effects and so can be cured by milk
    damagetype:
-   #-confusion
-   
+   - confusion
+   - slow
+
    # Removing mobs - this kills all monsters in the vicinity. Benefit is that it helps
    # players return to their island if the island has been overrun by monsters
    # Con is that it kills any mob grinders 
@@ -359,10 +361,10 @@ general:
    # Animal breeding limits - if this is set to more than 0, then players will not be able
    # to breed more animals than that number on their island. A value of zero means no
    # limit. Note that animals will not be killed or reduced to this limit.
-   # This WILL affect mobspawn blocks AND spawn egg use. Note that hearts will
+   # This also affects mobspawn blocks and spawn egg use. Note that hearts will
    # still appear, but breeding will not happen.
    breedinglimit: 0
-   
+
    # Sets the limit for number of water animals [squid] that can spawn in a chunk in this world. 
    # Note: If set to a negative number the world will use the server-wide spawn limit instead.
    # Max is 100
@@ -370,8 +372,9 @@ general:
 
    # Villager limit - this is per team player, so an island of 4 will have 4x this number
    # Note that 10 villagers minimum are required to create an iron farm. Zero is unlimited.
+   # Excessive villagers can cause entity lag.
    villagerlimit: 0
-      
+   
    # General entity limiting
    # Use this section to limit how many entities can be added to an island.
    # 0 means the item will be blocked from placement completely.
@@ -405,7 +408,7 @@ general:
 
    ##### Economy ######
    # Use economy or not. If true, an economy plugin is required. If false,
-   # no money is used or give and the mini-shop is disabled.
+   # no money is used or given and the mini-shop is disabled.
    # If there is no economy plugin present anyway, money will be automatically
    # disabled.
    useeconomy: true
@@ -433,8 +436,8 @@ general:
    # Reset Ender Chest - if true, the player's Ender Chest will be cleared when they
    # start or restart their island. Default is false.
    # NOTE: Ender Chests span worlds, so it will clear ALL chests. In general,
-   # Enderchests should not be allowed in ASkyblock unless you only run the ASkyblock
-   # world. Ender Chest crafting and use is governed by the askyblock.craft.enderchest
+   # Enderchests should not be allowed unless you only run the Acid Island
+   # world. Ender Chest crafting and use is governed by the acidisland.craft.enderchest
    # permission.
    resetenderchest: false
 
@@ -451,13 +454,11 @@ general:
    # Allow /island teleport when falling. If set to false, all teleporting is
    # disabled until death from the void or until you hit something.
    # See commands that this will block too
-   # Using "*" (with quotes) will block ALL commands when falling
    allowfallingteleport: true
    blockingcommands:
    - home
    #- anotherCommand
    #- andAnotherOne
-   #- "*"
 
    # Remove non-repeatable challenges from the challenge GUI when complete
    removecompleteonetimechallenges: false
@@ -473,7 +474,7 @@ general:
    
    # Default maximum number of homes a player can have. Min = 1
    # Accessed via sethome <number> or go <number>
-   # Use this permission to set for specific user groups: askyblock.island.maxhomes.<number>  
+   # Use this permission to set for specific user groups: acidisland.island.maxhomes.<number>  
    maxhomes: 1
 
    # Make island if player teleports to the island world and does not have one
@@ -495,7 +496,7 @@ general:
    # Use the variable "{ISLAND_LEVEL}" in chat prefixes in other plugins and it will
    # be replaced by the player's island level.
    # Confirmed to work with Essentials Chat, Multiverse Core and Herochat.
-   
+      
    # Restrict Wither
    # This allows the Wither to only damage the island where it is spawned.
    # Damage to any islands or players will not occur.
@@ -575,7 +576,7 @@ spawn:
   allowleashuse: false
   # Allow players to shear sheep
   allowshearing: false
-
+  
 # This section contains the biomes that can be bought or used
 biomesettings:
   # The default cost for changing biome. Can be over-ridden by the Biome settings
@@ -600,66 +601,57 @@ biomesettings:
 biomes:
   COLD_BEACH:
     icon: SAPLING
-    friendlyname: "&bCold &eBeach"
-    description: "&bSnowy and cold.|&bBrrr."
+    cost: 700
+    description: Snowy and cold. Brrr.
     # Perms can be any string you like!
-    #permission: any.perm.you.want
+    permission: acidisland.biomes.cold_beach
   DESERT:
     icon: DEAD_BUSH
-    friendlyname: "&eDesert"
-    description: "&eA dry desert.|&eWarning - Ice or|&esnow have to go."
+    description: A dry desert. Warning - Ice or snow have to go.
     #permission: any.perm.you.want
-  FOREST:
+  FLOWER_FOREST:
     icon: RED_ROSE
-    friendlyname: "&aForest"
-    description: "Trees!"
+    description: The place for flowers!
     #permission: any.perm.you.want
   HELL:
     icon: LAVA_BUCKET
     cost: 1000
-    # Note, this permission can be anything you like
-    permission: askyblock.biomes.hell
-    friendlyname: "&cNether"
-    description: "&eWarning - all water,|&esnow and ice will|&ebe removed."
+    permission: acidisland.biomes.hell
+    friendlyname: Nether
+    description: Warning - all water, snow and ice will be removed.
   JUNGLE:
     icon: VINE
-    friendlyname: "&2Jungle"
-    description: "&aLush jungle.|&aWarning - Ice or|&asnow have to go."
+    description: Lush jungle. Warning - Ice or snow have to go.
     #permission: any.perm.you.want
   MUSHROOM_ISLAND:
     icon: RED_MUSHROOM
     # Note, this permission can be anything you like
-    permission: askyblock.biomes.mushroom_island
-    friendlyname: "&cMushroom island"
-    description: "&cMushrooms"
+    permission: acidisland.biomes.mushroom_island
+    description: Mushroom island
+    #permission: any.perm.you.want
   PLAINS:
     icon: GRASS
     description: Plain plains!
-    cost: 0
     #permission: any.perm.you.want
+    cost: 0
   SWAMPLAND:
     icon: WATER_LILY
-    friendlyname: "&eSwampland"
-    description: "&2Swampy.|&eWarning - Ice or|&esnow have to go."
+    description: Swampy. Warning - Ice or snow have to go.
     #permission: any.perm.you.want
   MESA:
     icon: HARD_CLAY
-    friendlyname: "&eMesa"
-    description: "&4Rare dry, desert biome.|&4Warning - Ice or|&4snow have to go."
+    description: Rare dry, desert biome. Warning - Ice or snow have to go.
     #permission: any.perm.you.want
     cost: 500
   SAVANNA:
     icon: LONG_GRASS
-    friendlyname: "&eSavanna"
-    description: "&eFlat and dry, no rain.|&eWarning - Ice or|&esnow have to go."
+    description: Flat and dry, no rain. Warning - Ice or snow have to go.
     #permission: any.perm.you.want
   ROOFED_FOREST:
     icon: LOG
-    friendlyname: "&l&eBlack Forest"
-    description: "&6Woods and trees"
+    description: Black forest
     #permission: any.perm.you.want
-
-
+    
 schematicsection:
    # All schematics should be put in the schematics folder
 
@@ -667,15 +659,7 @@ schematicsection:
    # Show a panel to choose. If this is false, no panel is shown and the starter 
    # island is picked by permission. If a player has more than one permission
    # the island selected is undefined - the plugin will pick one.
-   # Permissions are taken from the below schematics section even if the GUI is
-   # not used.
   useschematicspanel: true
-
-   # Random island, only apply when useschematicspanel is false - if set to false
-   # the plugin will choose the first island it found with the user permissions
-   # to generate a new island. If set to true, the plugin will generate an island
-   # randomly from the list of all islands available to the player.
-  chooseislandrandomly: false
 
   # This section lists all the schematics available
   # Settings are:
@@ -701,7 +685,7 @@ schematicsection:
     # default heading is required
     default:
       # Icon - if this is missing or wrong, it will be a MAP
-      icon: DIRT
+      icon: SAND
       # Order of preference in listing
       order: 1
       # Short name - color codes with & okay
@@ -709,11 +693,10 @@ schematicsection:
       # Longer description. Use | for new lines. Color codes okay.
       description: "Challenging|starter|island!"
       # Filename of the schematic in the schematic folder
-      filename: island.schematic
+      # Default island does not need a filename
+      # filename: island.schematic
       # Use default chest if true, or use schematic chest contents if false
       useDefaultChest: true
-      # Which schematic will be used in the opposite world if newnether:true
-      # If there is no partner, this island will be used
       partnerSchematic: nether
     # This is the default nether island - do not remove this section!
     nether:
@@ -734,65 +717,29 @@ schematicsection:
       pasteentities: true
       # Usephysics causes lava or water to flow after being pasted. Change to false
       # if it lags
-      usephysics: true    
+      usephysics: true
     # Additional heading names can be anything you like, but must be unique
-    island1:
-      # Credit to Antal1609 for this schematic!
-      icon: RED_ROSE
+    temple:
+      icon: CACTUS
       order: 2
-      name: "Island Duo"
-      description: "Two close islands!|Double the fun,|but a little easier.|&a[Credit] Antal1609"
-      filename: double.schematic
-      # Schematics can have biomes set when they are created
-      biome: FOREST
-      # If useDefaultChest is false, the items in the schematic will be used
-      # If false, the default chest items will be used, or the list below
-      useDefaultChest: true
-      # Chest items defined here will override the default chest items.
-      # You can set the chest items here in this list
-      # Material:Qty, or Material:Data:Qty
-      #chestItems:
-      #- MELON:1
-      #- ICE:1
-      # Your island companion. Overrides the default setting. If more than one is
-      # listed, one will be chosen at random.
-      # Options are: COW, PIG, SHEEP, CHICKEN, VILLAGER, HORSE, IRON_GOLEM, OCELOT,
-      # RABBIT, WOLF or NOTHING. Default is COW.
-      companion:
-      - CHICKEN 
-      # This is a list of names, picked at random that will apply to the companion
-      # You can add more if you like. If none are listed, the companion will not be
-      # named.
-      companionnames:
-      - "&9[player]'s chicken"
-      - "&dFree-Range Eggs"
-      partnerSchematic: nether
-      #permission: any.perm.you.like
-    # New snowy schematic
-    extrahard:
-      icon: OBSIDIAN
-      order: 3
-      # Ski theme - a black diamond run is hard.
-      name: "&lBlack &bDiamonds"
-      description: "Experts only!|&aMinimal resources|&awith a few diamonds."
-      filename: harder.schematic
-      biome: COLD_BEACH
+      name: "Temple"
+      description: "You find yourself|on a desert island|with a hidden secret!"
+      filename: temple.schematic
+      # All the goodies are inside the schematic
       useDefaultChest: false
-      # Chest items defined here will override the default chest items.
+      # Chest items defined here will override the default chest items if useDefaultChest
+      # is true.
       # You can set the chest items here in this list
       # Material:Qty, or Material:Data:Qty
       #chestItems:
       #- MELON:1
       #- ICE:1
-      # Schematics that require water or lava to hover can prevent physics when pasting
+      # Biome can be set here
+      biome: DESERT
+      # If schematic should paste blocks without physics or not
       usephysics: false
-      # Schematics may include entities (mobs) in them and if pasteentities is true,
-      # mobs will be pasted.
-      # Example: Setting this to true for this schematic will give a wolf.
-      pasteentities: false
-      partnerSchematic: nether
       #permission: any.perm.you.like
       # This optional block determines where the player will spawn. It must be unique in
       # the schematic and will be replaced by air when pasted.
       #spawnblock: SPONGE
-      
+      partnerSchematic: nether

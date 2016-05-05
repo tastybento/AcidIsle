@@ -65,7 +65,7 @@ challenges:
   erroryouaremissing: "You are missing"
   expReward: "&b經驗獎勵"
   firstTimeRewards: "&b首次完成獎勵"
-  guititle: "ASkyBlock 挑戰"
+  guititle: "挑戰"
   help1: "&6輸入&e /c &b<挑戰名字> &6來查詢一個挑戰的信息."
   help2: "&6輸入&e /c complete &b<挑戰名字> &6完成一個挑戰."
   incomplete: "&l未完成"
@@ -142,8 +142,7 @@ invite:
   youHaveJoinedAnIsland: "你加入了一個島嶼! 使用 &e&l/[label] team &a來查看其他成員."
 island: 
   cannotTeleport: "&c&l你不能在掉落時傳送!"
-  donate: "Welcome to A SkyBlock by tastybento"
-  donatecolor: "aqua"
+  donate: "Welcome to AcidIsland by tastybento"
   errorCouldNotCreateIsland: "無法為你創建島嶼. 請聯繫管理員."
   errorInvalidPlayer: 玩家不存在或者他不曾擁有一個島嶼!
   errorLevelNotReady: 請稍等數秒後再輸入此指令!
@@ -182,10 +181,8 @@ island:
   resetWait: "&c你需要等待 &e[time] 秒&c才能那樣做."
   resetYouHave: "&6你還有&b&l [number] &6次重新開始的機會."
   subtitle: "by tastybento"
-  subtitlecolor: "aqua"
   teleport: "&b&l[島嶼娘]:&6歡迎回來~我的主人. &e(輸入&c/[label] help &e獲取更多幫助)"
-  title: "A SkyBlock"
-  titlecolor: "gold"
+  title: "AcidIsland"
   url: ""
 islandProtected: 島嶼保護.
 islandguardsettings: 
@@ -270,7 +267,7 @@ minishop:
   outofstock: 物品賣完了喲
   sell: "&c&l出售&e&l"
   sellproblem: 你沒有足夠的物品.
-  title: "&5&l迷你商店&e-&d&l左鍵購買&c&l右鍵出售"
+  title: "&l迷你商店&e-&d&l左鍵購買&c&l右鍵出售"
   youbought: "&a你購買了&e[number]&a個&6[description]&a花費了&b[price]"
   youcannotafford: "&c餘額不足!"
   yousold: "&a你出售了&e[number]&a個[description]&a獲得了&b[price]"
@@ -279,7 +276,7 @@ moblimits:
 nether: 
   spawnisprotected: 地獄重生點保護
 news: 
-  headline: "[A Skyblock News] 當你離線時..."
+  headline: "[AcidIsland News] 當你離線時..."
 purge: 
   alreadyRunning: "清除已在運行中, 請稍後至它完成!"
   calculating: "計算島嶼閒置時間超過 [time] 天者"
@@ -341,6 +338,7 @@ warps:
   removed: "&c&l傳送點已經移除!"
   signRemoved: "&c&l你的島嶼傳送點已經移除!"
   success: "&b&l空島傳送點成功創建!"
+  title: "&eIsland warps"
   warpTip: "放置一個木牌,並且在木牌的第一行輸入&b[WELCOME]&e以設置一個島嶼傳送點."
   warpToPlayersSign: "傳送到玩家: &b<player>&e的島嶼傳送點."
   warpsAvailable: 以下的傳送點可用

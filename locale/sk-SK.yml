@@ -56,7 +56,7 @@ challenges:
   erroryouaremissing: "Stratil si sa!"
   expReward: "XP Odmena"
   firstTimeRewards: "Prva odmena:"
-  guititle: "Skyblock ulohy"
+  guititle: "AcidIsland ulohy"
   help1: "Pouzi /c <nazov> pre zobrazenie informacii o ulohe."
   help2: "Pouzi /c complete <nazov> pre dokoncenie ulohy."
   incomplete: Nekompletne
@@ -133,8 +133,7 @@ invite:
   youHaveJoinedAnIsland: "Pridal si sa na ostrov! Pouzi /[label] team pre zobrazenie ostatnych hracov."
 island: 
   cannotTeleport: "Nemozes sa portnut ked padas!"
-  donate: "A SkyBlock by tastybento"
-  donatecolor: "aqua"
+  donate: "AcidIsland by tastybento"
   errorCouldNotCreateIsland: "Nemozem vytvorit ostrov. Nahlas to do bugtrackera na fore!"
   errorInvalidPlayer: "Hrac je zle zadany, alebo nema ostrov"
   errorLevelNotReady: "Tento prikaz teraz nemozes pouzit. Skus to neskor"
@@ -142,7 +141,7 @@ island:
   helpAcceptReject: "akceptovat alebo ignorovat pozvanku na ostrov"
   helpChallenges: "/challenges: &fukaze ulohy"
   helpColor: "&e"
-  helpControlPanel: "otvorit menu SKYBLOCK"
+  helpControlPanel: "otvorit menu AcidIsland"
   helpExpel: "vyhodit hraca z ostrova"
   helpInvite: "pozvi hraca na svoj ostrov"
   helpIsland: "vytvori ostrov alebo otvori menu"
@@ -173,10 +172,8 @@ island:
   resetWait: "musis cakat [time] sekund nez mozes vykonat tuto akciu znovu."
   resetYouHave: "Ostava ti [number] restartov ostrova."
   subtitle: "Zacina sa dobrodruzstvo!"
-  subtitlecolor: "blue"
   teleport: "Vitaj na svojom ostrove. (Pouzi /[label] help pre viac info)"
-  title: "A Skyblock"
-  titlecolor: "gold"
+  title: "AcidIsland"
   url: ""
 islandProtected: "Ostrov je chraneny."
 islandguardsettings: 
@@ -261,7 +258,7 @@ minishop:
   outofstock: "Nie je tovar"
   sell: Predaj
   sellproblem: "Uz asi nemas [description] na predaj."
-  title: "&eMiniShop"
+  title: "MiniShop"
   youbought: "Prave si kupil [number] [description] za [price]"
   youcannotafford: "Nemas dost Sco na [description]!"
   yousold: "Predal si [number] [description] za [price]"
@@ -270,7 +267,7 @@ moblimits:
 nether: 
   spawnisprotected: "The Nether spawn area is protected."
 news: 
-  headline: "[Skyblock News] Pocas tvojej nepritomnosti..."
+  headline: "[AcidIsland News] Pocas tvojej nepritomnosti..."
 purge: 
   alreadyRunning: "Purge is already running, please wait for it to finish!"
   calculating: "Calculating which islands have been inactive for more than [time] days."
@@ -332,6 +329,7 @@ warps:
   removed: "Uvitacia cedulka bola vymazana!"
   signRemoved: "Vasa uvitacia cedulka bola znicena!"
   success: "Uvitacia cedulka bola vytvorena spravne!"
+  title: "&eIsland warps"
   warpTip: "Vytvor si warp pomocou cedulky a textu [WELCOME] na prvom riadku."
   warpToPlayersSign: "Warp k uvitacej cedulke hraca <player>."
   warpsAvailable: "Nasledovne warpy su povolene"

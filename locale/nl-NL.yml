@@ -30,7 +30,7 @@ adminHelp:
   resetsign: "hiermee herstel je het warp bordje van de eigenaar"
   setbiome: "zet de biome van het eiland"
   setrange: "veranderd het eiland protectie-bereik"
-  setspawn: "zet de skyblock spawn naar jouw locatie"
+  setspawn: "zet de AcidIsland spawn naar jouw locatie"
   teamChatSpy: "spioneer in team chats (aan/uit)"
   topTen: "handmatig bijwerken van de top 10 lijst"
   topbreeders: "lijst van meest bezochte eilanden is geladen"
@@ -144,7 +144,7 @@ challenges:
   erroryouaremissing: "U ontbreekt"
   expReward: "Exp beloning"
   firstTimeRewards: "Eerste keer beloning"
-  guititle: "Skyblock Challenges"
+  guititle: "AcidIsland Challenges"
   help1: "Gebruik /c <naam> om de informatie te zien over die challenge."
   help2: "Gebruik /c complete <naam> om die challenge te doen."
   incomplete: "Niet compleet"
@@ -189,10 +189,9 @@ drankAcid: "drink zuur."
 drankAcidAndDied: "drink zuur en ga dood."
 error: 
   commandNotReady: "Je kan dat commando nu niet gebruiken."
-  maxIslands: "The world is full of islands! Try again later!"
   noIsland: "Je hebt geen eiland!"
   noIslandOther: "Die speler heeft geen eiland!"
-  noPermission: "Je hebt geen permissie voor dat Skyblock commando!"
+  noPermission: "Je hebt geen permissie voor dat AcidIsland commando!"
   noTeam: "Speler zit niet in een team."
   notOnIsland: "Je zit in in een eiland ruimte!"
   offlinePlayer: "Die speler is offline of bestaat niet."
@@ -226,8 +225,7 @@ invite:
   youHaveJoinedAnIsland: "Je hebt een eiland gejoined! Gebruik /[label] team om je teamleden te zien."
 island: 
   cannotTeleport: "Je kan niet teleporteren tijdens het vallen!"
-  donate: "Plugin by tastybento"
-  donatecolor: "aqua"
+  donate: "Credits in spawn"
   errorCouldNotCreateIsland: "Kan het eiland niet maken. Neem contact op met een moderator."
   errorInvalidPlayer: "Die speler bestaat niet of heeft geen eiland!"
   errorLevelNotReady: "Kan dat commando nu niet uitvoeren! Probeer het later nog een keer."
@@ -265,11 +263,9 @@ island:
   resetTo: "Reset limiet gereset"
   resetWait: "Je moet nog [time] seconden wachten voordat je dat weer kan doen."
   resetYouHave: "Je hebt [number] resets over."
-  subtitle: "by tastybento"
-  subtitlecolor: "blue"
+  subtitle: ""
   teleport: "Teleporteren naar je eiland. (/[label] help voor meer info)"
-  title: "A Skyblock"
-  titlecolor: "gold"
+  title: AcidIsland
   url: ""
 islandProtected: "Eiland beschermd."
 islandguardsettings: 
@@ -295,8 +291,6 @@ islandguardsettings:
   fire: Vuur
   furnace: "Oven gebruiken"
   gate: "Poortjes gebruiken"
-  horseinventoryaccess: "Visitor horse inventory access"
-  horseriding: "Visitor horse riding"
   hurtanimals: "Dieren doden"
   hurtmonsters: "Monsters doden"
   jukebox: "Jukebox gebruiken"
@@ -305,15 +299,8 @@ islandguardsettings:
   netherpvp: "Nether PvP"
   placeblocks: "Blokken plaatsen"
   portaluse: "Portaal gebruiken"
-  pressureplate: "Visitors activate pressure plates"
   pvp: PvP
   redstone: "Redstone gebruiken"
-  settingsgeneraltitle: "General Island World Settings"
-  settingsgeneraldesc: "General Island World Settings"
-  settingsislandtitle: "Island Settings"
-  settingsislanddesc: "These rules apply to visitors on this island"
-  settingsspawntitle: "Spawn Settings"
-  settingsspawndesc: "These rules apply at spawn"
   shears: "Schaar gebruiken"
   spawnegg: "Spawn eieren gebruiken"
   teleportwhenfalling: "Teleporteren tijdens vallen"
@@ -366,7 +353,7 @@ minishop:
   outofstock: Uitverkocht
   sell: "Verkopen (Rechter muisknop)"
   sellproblem: "Je hebt niet genoeg [description] om te verkopen."
-  title: "&Minishop"
+  title: "Minishop"
   youbought: "Je kocht [number] [description] voor [price]"
   youcannotafford: "Je kan dat niet betalen [description]!"
   yousold: "Je verkocht [number] [description] voor [price]"
@@ -377,7 +364,7 @@ moblimits:
 nether: 
   spawnisprotected: "Het nether spawn gebied is beschermd."
 news: 
-  headline: "[Skyblock nieuws] Toen je offline was..."
+  headline: "[AcidIsland nieuws] Toen je offline was..."
 purge: 
   acidFound: "Er zijn [number] eilanden zonder eigenaar. Doe '/acid purge unowned confirm' binnen 20 seconden om ze te verwijderen"
   allowPurge: "Verwijder protectie verwijderd"
@@ -414,7 +401,7 @@ resetchallenge:
 schematics: 
   title: "Eiland selecteren..."
 sethome: 
-  errorNoIsland: "Je hebt nog geen eiland. We teleporteren je terug naar de Skyblock spawn!"
+  errorNoIsland: "Je hebt nog geen eiland. We teleporteren je terug naar de AcidIsland spawn!"
   errorNotOnIsland: "Je moet in je eiland limieten zijn om je thuisplek te kunnen zetten!"
   errorNumHomes: "Je kan 1 tot [max] thuisplekken hebben"
   homeSet: "Je eiland thuisplek is gezet op deze locatie."
@@ -422,12 +409,12 @@ sign:
   line1: "&1[Skyblock]"
   line2: "[player]"
   line3: "Val niet!"
-  line4: Voorzichtig!
+  line4: "Voorzichtig!"
 sign-acidisland: 
   line1: "&1[AcidIsland]"
   line2: "[player]"
   line3: "Water is zuur!"
-  line4: Voorzichtig!
+  line4: "Voorzichtig!"
 targetInPVPArea: "Doel is in een geen PvP arena!"
 team: 
   listingMembers: "Luister naar je teamleden"
@@ -457,7 +444,7 @@ warps:
   removed: "Warp bordje is verwijderd!"
   signRemoved: "Je warp bordje is verwijderd!"
   success: "Warp sign succesvol geplaatst!"
-  title: "Eiland warps"
+  title: "&eEiland warps"
   warpTip: "Maak een warp sign door [WELCOME] op de top te schrijven."
   warpToPlayersSign: "Aan het warpen naar <player>'s warp."
   warpsAvailable: "De volgende warps zijn beschikbaar:"

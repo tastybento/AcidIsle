@@ -7,7 +7,7 @@
 # inventory - means the player must have the items on them
 # island - means the items have to be on the island and within 10 blocks of the player
 #          entities are also supported, e.g., COW.
-# level - means the island level has to be equal or over this amount.
+# level - means the island level has to be equal or over this amount
 #         If level is set as nothing '', then the challenge is a free challenge and can be
 #         done at any time.
 # Challenges can be repeatable only if they are inventory challenges
@@ -29,39 +29,18 @@
 #      - heal [player]
 #      - warp winner_circle [player]
 # If a command fails, it will be noted in the console.
-#
-# The format for POTIONS is as follows:
-#
-# Format POTION:NAME:<LEVEL>:<EXTENDED>:<SPLASH/LINGER>:QTY
-# LEVEL, EXTENDED, SPLASH, LINGER are optional.
-# LEVEL is a number, 1 or 2
-# LINGER is for V1.9 servers and later
-# Examples:
-# POTION:STRENGTH:1:EXTENDED:SPLASH:1
-# POTION:INSTANT_HARM:2::LINGER:2
-# POTION:JUMP:2:NOTEXTENDED:NOSPLASH:1
-# POTION:WEAKNESS::::1   -  any weakness potion
-# 
-# Valid potion names are:
-# WATER, REGEN, SPEED, FIRE_RESISTANCE, POISON, INSTANT_HEAL, NIGHT_VISION, WEAKNESS,
-# STRENGTH, SLOWNESS, JUMP, INSTANT_DAMAGE, WATER_BREATHING, INVISIBILITY
-# For V1.9 these are also available:
-# LUCK, MUNDANE, THICK, AWKWARD
-#
-#
 # Reseting islands and challenges - usually challenges are reset when a player resets
 # their island (see resetchallenges in config.yml). You can stop some challenges from
 # being reset by using resetallowed:false in the challenge.
 ##########################################################################################
 
 challenges:
-  # Challenge levels - list as many as you like. If a challenge's level is '' it can
-  # be done anytime.
+  # Challenge levels - list as many as you like
   levels: 'Novice Competent Expert Advanced Elite'
-    
+
   # The number of undone tasks that can be left on a level before unlocking next level
   waiveramount: 1
-  
+
   # Free levels - which levels above should be auto done when reached, therefore unlocking next level.
   # Example:
   # freelevels: 'Novice' will immediately put player onto Competent level challenges 
@@ -128,32 +107,35 @@ challenges:
   challengeList:
     glassmaker:
       friendlyname: 'Glass Maker'
-      description: 'Create 1 block of glass'
-      icon: GLASS
+      description: 'Create 64 panes of glass (not blocks)'
+      icon: THIN_GLASS
       level: 'Novice'
       type: inventory
-      requiredItems: 'GLASS:1'
+      requiredItems: 'THIN_GLASS:64'
       # You can require the player has a certain amount of money for inventory challenges.
       # Remember to mention it in the description!
       # If takeItems is true, the money will be removed, so you may want to give it
       # back in the reward.
       #requiredMoney: 10
       takeItems: true
-      itemReward: 'ICE:1'
-      rewardText: '1 block of ice'
+      itemReward: 'SAPLING:0:2 SAPLING:1:2 SAPLING:2:2 SAPLING:3:2'
+      rewardText: '2 oak, 2 birch, 2 jungle and 2 spruce saplings'
       #rewardcommands:
-      #- kit tools [player]
+      #  - give [player] DIAMOND 1  <--- this is totally silly, just an example!
+      #  - eco set [player] 3000    <--- this is totally silly, just an example!
       moneyReward: 10
       expReward: 30
       permissionReward: ''
       repeatable: true
-      repeatItemReward: 'ICE:1'
-      repeatRewardText: '1 block of ice'
+      repeatItemReward: 'SAPLING:0:1 SAPLING:1:1 SAPLING:2:1 SAPLING:3:1 SAPLING:4:1 SAPLING:5:1'
+      repeatRewardText: '1 of each kind of sapling'
       repeatMoneyReward: 5
       repeatExpReward: 10
       #repeatrewardcommands:
+      #  - eco set [player] 6000 <--- this is totally silly, just an example!
+      #  - vanish [player] <--- this is totally silly, just an example!
       # Max times limits how many times a challenge can be done. Comment out to make unlimited
-      maxtimes: 2
+      maxtimes: 100
       # Allow this challenge to reset when the player resets their island
       # Default is true. Set to false to keep this challenge completed.
       # Admins can always reset challenges even if this is set to false.
@@ -186,15 +168,15 @@ challenges:
       type: inventory
       requiredItems: 'INK_SACK:2:32'
       takeItems: true
-      itemReward: 'SAPLING:0:2 SAPLING:1:2 SAPLING:2:2 SAPLING:3:2'
-      rewardText: '2 oak, 2 birch, 2 jungle and 2 spruce saplings'
-      moneyReward: 10
+      itemReward: 'PACKED_ICE:10'
+      rewardText: '10 blocks of packed ice'
+      moneyReward: 15
       expReward: 30
       permissionReward: ''
       repeatable: true
-      repeatItemReward: 'SAPLING:0:1 SAPLING:1:1 SAPLING:2:1 SAPLING:3:1 SAPLING:4:1 SAPLING:5:1'
-      repeatRewardText: '1 of each kind of sapling'
-      repeatMoneyReward: 5
+      repeatItemReward: 'PACKED_ICE:5'
+      repeatRewardText: '5 blocks of packed ice'
+      repeatMoneyReward: 1
       repeatExpReward: 10
       # Max times limits how many times a challenge can be done. Comment out to make unlimited
       maxtimes: 100
@@ -212,8 +194,8 @@ challenges:
       expReward: 30
       permissionReward: ''
       repeatable: true
-      repeatItemReward: 'SAND:2'
-      repeatRewardText: '2 sand blocks'
+      repeatItemReward: 'CLAY:2'
+      repeatRewardText: '2 clay blocks'
       repeatMoneyReward: 5
       repeatExpReward: 10
       # Max times limits how many times a challenge can be done. Comment out to make unlimited
@@ -296,6 +278,8 @@ challenges:
       repeatRewardText: ''
       repeatMoneyReward: 0
       repeatExpReward: 0
+      # Max times limits how many times a challenge can be done. Comment out to make unlimited
+      maxtimes: 100
     grinder:
       description: 'Kill monsters and collect 64 rotten flesh, 32 skeleton bones, 32 string, 32 arrows, 16 gunpowder, 5 spider eyes'
       icon: BONE
@@ -313,8 +297,6 @@ challenges:
       repeatRewardText: '2 redstone dust, 1 flint, 1 water breathing potion and 1 iron(ore)'
       repeatMoneyReward: 15
       repeatExpReward: 15
-      # Max times limits how many times a challenge can be done. Comment out to make unlimited
-      maxtimes: 100
     farmer:
       description: 'Harvest 64 units of the following: wheat, sugar, melon, carrots, potatoes, pumpkin'
       icon: WHEAT
@@ -322,13 +304,13 @@ challenges:
       type: inventory
       requiredItems: 'WHEAT:64 SUGAR:64 MELON:64 CARROT_ITEM:64 POTATO_ITEM:64 PUMPKIN:64'
       takeItems: true
-      itemReward: 'REDSTONE:16 INK_SACK:3:1 MONSTER_EGG:PIG:1 MONSTER_EGG:COW:1 MONSTER_EGG:CHICKEN:1'
+      itemReward: 'REDSTONE:16 INK_SACK:3:1 MONSTER_EGG:COW:1 MONSTER_EGG:PIG:1 MONSTER_EGG:CHICKEN:1'
       rewardText: '16 redstone dust, 1 cocoa bean, 1 spawn egg(chicken,cow,pig)'
       moneyReward: 75
       expReward: 75
       permissionReward: ''
       repeatable: true
-      repeatItemReward: 'INK_SACK:3:1 MONSTER_EGG:PIG:1 MONSTER_EGG:COW:1 MONSTER_EGG:CHICKEN:1'
+      repeatItemReward: 'INK_SACK:3:1 MONSTER_EGG:COW:1 MONSTER_EGG:PIG:1 MONSTER_EGG:CHICKEN:1'
       repeatRewardText: '1 cocoa bean, 1 spawn egg(chicken,cow,pig)'
       repeatMoneyReward: 20
       repeatExpReward: 20
@@ -372,8 +354,6 @@ challenges:
       repeatRewardText: '2 redstone dust, 1 iron (ore)'
       repeatMoneyReward: 15
       repeatExpReward: 15
-      # Max times limits how many times a challenge can be done. Comment out to make unlimited
-      maxtimes: 100
     cookiemaker:
       friendlyname: 'Cookie Maker'
       description: 'Make 128 cookies and a bucket of milk'
@@ -392,8 +372,6 @@ challenges:
       repeatRewardText: '2 redstone dust, 1 iron (ore)'
       repeatMoneyReward: 15
       repeatExpReward: 15
-      # Max times limits how many times a challenge can be done. Comment out to make unlimited
-      maxtimes: 100
     craftsman:
       friendlyname: 'Craftsman'
       description: 'Reach island level 75 (/[label] level).'
@@ -526,8 +504,8 @@ challenges:
       expReward: 100
       permissionReward: ''
       repeatable: true
-      repeatItemReward: 'IRON_ORE:1'
-      repeatRewardText: '1 iron (ore)'
+      repeatItemReward: 'LAPIS_ORE:10'
+      repeatRewardText: '10 lapis lazuli ore blocks'
       repeatMoneyReward: 20
       repeatExpReward: 20
       # Max times limits how many times a challenge can be done. Comment out to make unlimited
@@ -588,6 +566,8 @@ challenges:
       repeatRewardText: '1 diamond'
       repeatMoneyReward: 20
       repeatExpReward: 20
+      # Max times limits how many times a challenge can be done. Comment out to make unlimited
+      maxtimes: 100
     dj:
       friendlyname: 'DJ'
       description: 'Craft a jukebox and collect all music discs'
@@ -634,9 +614,7 @@ challenges:
       icon: GOLDEN_APPLE
       level: 'Advanced'
       type: inventory
-      requiredItems: 'BAKED_POTATO:1 BREAD:1 CAKE:1 COOKED_CHICKEN:1 COOKED_FISH:1 GRILLED_PORK:1 COOKIE:1 GOLDEN_APPLE:0:1 GOLDEN_CARROT:1 MUSHROOM_SOUP:1 PUMPKIN_PIE:1 COOKED_BEEF:1'
-      # If you are running 1.8 change to this:
-      # requiredItems: 'BAKED_POTATO:1 BREAD:1 CAKE:1 COOKED_CHICKEN:1 COOKED_FISH:1 GRILLED_PORK:1 COOKIE:1 GOLDEN_APPLE:0:1 GOLDEN_CARROT:1 MUSHROOM_SOUP:1 PUMPKIN_PIE:1 COOKED_BEEF:1 COOKED_RABBIT:1 RABBIT_STEW:1 COOKED_MUTTON:1'
+      requiredItems: 'BAKED_POTATO:1 BREAD:1 CAKE:1 COOKED_CHICKEN:1 COOKED_FISH:1 GRILLED_PORK:1 COOKIE:1 GOLDEN_APPLE:0:1 GOLDEN_CARROT:1 MUSHROOM_SOUP:1 PUMPKIN_PIE:1 COOKED_BEEF:1' 
       takeItems: true
       itemReward: 'GOLD_BLOCK:2 GREEN_RECORD:1 RECORD_3:1 RECORD_5:1 MONSTER_EGG:MUSHROOM_COW:1 EMERALD:5'
       rewardText: '2 gold blocks, 3 music discs, 1 mooshroom spawn egg, and 5 emeralds'
@@ -648,8 +626,6 @@ challenges:
       repeatRewardText: '10 gold ingots, 1 mooshroom spawn egg, 1 emerald'
       repeatMoneyReward: 20
       repeatExpReward: 20
-      # Max times limits how many times a challenge can be done. Comment out to make unlimited
-      maxtimes: 100
     beaconator:
       friendlyname: 'Beaconator'
       description: 'Build a beacon and let it shine!'
@@ -668,6 +644,8 @@ challenges:
       repeatRewardText: ''
       repeatMoneyReward: 0
       repeatExpReward: 0
+      # Max times limits how many times a challenge can be done. Comment out to make unlimited
+      maxtimes: 100
     ittakesavillage:
       friendlyname: 'It Takes A Village'
       description: 'Hold a village meeting with 10 villagers!'
@@ -776,3 +754,4 @@ challenges:
       repeatRewardText: ''
       repeatMoneyReward: 0
       repeatExpReward: 0
+

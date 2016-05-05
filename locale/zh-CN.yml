@@ -100,7 +100,7 @@ challenges:
   erroryouaremissing: §c未找到你的信息
   expReward: §b经验奖励
   firstTimeRewards: §b首次完成奖励
-  guititle: "§eASkyBlock 挑战"
+  guititle: "§e挑战"
   help1: "§6输入§e /c §b<挑战名字> §6来查询一个挑战的信息."
   help2: "§6输入§e /c complete §b<挑战名字> §6完成一个挑战."
   incomplete: §c未完成
@@ -179,7 +179,6 @@ invite:
 island: 
   cannotTeleport: §c你无法在下落过程中进行传送!
   donate: §a本汉化由§e§l梦之地§a提供
-  donatecolor: "aqua"
   errorCouldNotCreateIsland: "§c无法为你创建岛屿. 请联系管理员."
   errorInvalidPlayer: §c玩家不存在或者他不曾拥有一个岛屿!
   errorLevelNotReady: §c请稍等数秒后再输入此指令!.
@@ -218,10 +217,8 @@ island:
   resetWait: "§c你需要等待 §e[time] 秒§c才能那样做."
   resetYouHave: "§6你还有§b [number] §6次重新开始的机会."
   subtitle: §a§l请务必努力生存下去
-  subtitlecolor: "blue"
   teleport: "§b[岛屿娘]:§6欢饮回来~我的主人. §e(输入§c/[label] help §e获取更多帮助)"
-  title: ASkyBlock
-  titlecolor: "gold"
+  title: §c§l欢迎加入末日岛屿
   url: ""
 islandProtected: 岛屿保护.
 islandguardsettings: 
@@ -309,7 +306,7 @@ minishop:
   outofstock: §c物品卖完了哟
   sell: §c出售§e
   sellproblem: §c你没有足够的物品.
-  title: §5迷你商店§e-§d左键购买§c右键出售
+  title: "迷你商店§e-§d左键购买§c右键出售"
   youbought: "§a你购买了§e[number]§a个§6[description]§a花费了§b[price]"
   youcannotafford: §c余额不足!
   yousold: "§a你出售了§e[number]§a个[description]§a获得了§b[price]"
@@ -394,7 +391,7 @@ warps:
   removed: §c传送点已经移除!
   signRemoved: §c你的岛屿传送点已经移除!
   success: §a空岛传送点成功创建!
-  title: §b岛屿传送点
+  title: §e岛屿传送点
   warpTip: "§e放置一个木牌,并且在木牌的第一行输入§b[传送点]§e以设置一个岛屿传送点."
   warpToPlayersSign: "§e传送到玩家: §b<player>§e的岛屿传送点."
   warpsAvailable: §a以下的传送点可用

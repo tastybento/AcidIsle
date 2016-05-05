@@ -24,7 +24,6 @@ adminHelp:
   info: "info for the given player"
   infoisland: "provide info on the nearest island"
   kick: "removes player from any team"
-  level: "provide detailed island level report on player"
   lock: "locks/unlocks player's island"
   purge: "delete inactive islands older than [TimeInDays]."
   purgeallowdisallow: "allow/disallow island to be purged if it meets purge criteria"
@@ -32,7 +31,6 @@ adminHelp:
   purgeunowned: "remove unowned islands"
   register: "set a player's island to your location"
   reload: "reload configuration from file."
-  register: "reserves this spot for player's next island"
   resetAllChallenges: "resets all of the player's challenges"
   resetChallenge: "marks a challenge as incomplete"
   resetsign: "Resets the sign you are looking at to the island owner"
@@ -76,8 +74,6 @@ adminResetSign:
   found: "Warp sign found!"
   noSign: "You must be looking at a sign post to run this command."
   rescued: "Warp sign rescued and assigned to [name]"
-adminReserve:
-  islandExists: "There is an island here already! Register the player instead!"
 adminSetHome: 
   homeSet: "Home set to [location]"
   noneFound: "No safe location found!"
@@ -155,7 +151,7 @@ challenges:
   erroryouaremissing: "You are missing"
   expReward: "Exp reward"
   firstTimeRewards: "First time reward(s)"
-  guititle: "aSkyBlock Challenges"
+  guititle: "AcidIsland Challenges"
   help1: "Use /c <name> to view information about a challenge."
   help2: "Use /c complete <name> to attempt to complete that challenge."
   incomplete: "Incomplete"
@@ -205,8 +201,8 @@ error:
   noPermission: "You don't have permission to use that command!"
   noTeam: "Player is not in a team."
   notOnIsland: "You are not in an island space!"
-  maxIslands: "The world is full of islands! Try again later!"
   offlinePlayer: "That player is offline or doesn't exist."
+  maxIslands: "The world is full of islands! Try again later!"
   unknownCommand: "Unknown command."
   unknownPlayer: "That player is unknown."
   useInGame: "This command must be used in-game."
@@ -217,8 +213,6 @@ expel:
   notonisland: "Player is not trespassing on your island!"
   notyourself: "You cannot expel yourself!"
   success: "You expelled [name]!"
-general:
-  success: "Success!"
 invite: 
   errorCantJoinIsland: "You couldn't join the island, maybe it's full."
   errorCoolDown: "You can invite that player again in [time] minutes"
@@ -239,8 +233,7 @@ invite:
   youHaveJoinedAnIsland: "You have joined an island! Use /[label] team to see the other members."
 island: 
   cannotTeleport: "You cannot teleport when falling!"
-  donate: "Welcome to A SkyBlock by tastybento"
-  donatecolor: "aqua"
+  donate: "Welcome to AcidIsland by tastybento"
   errorCouldNotCreateIsland: "Could not create your Island. Please contact a server moderator."
   errorInvalidPlayer: "That player is invalid or does not have an island!"
   errorLevelNotReady: "Can't use that command right now! Try again in a few seconds."
@@ -279,10 +272,8 @@ island:
   resetWait: "You have to wait [time] seconds before you can do that again."
   resetYouHave: "You have [number] resets left."
   subtitle: "by tastybento"
-  subtitlecolor: "blue"
   teleport: "Teleporting you to your island. (/[label] help for more info)"
-  title: "A SkyBlock"
-  titlecolor: "gold"
+  title: "AcidIsland"
   url: ""
 islandProtected: "Island protected."
 islandguardsettings: 
@@ -301,11 +292,11 @@ islandguardsettings:
   creeperdamage: "Creeper damage"
   creepergriefing: "Creeper griefing"
   croptrample: "Crop trampling"
-  disallowed: Disallowed
+  disallowed: "Disallowed"
   door: "Door use"
   enchantingtable: "Enchanting table use"
   enderpearl: "Enderpearl use"
-  fire: "Fire"
+  fire: Fire
   furnace: "Furnace use"
   gate: "Gate use"
   horseinventoryaccess: "Visitor horse inventory access"
@@ -319,7 +310,7 @@ islandguardsettings:
   placeblocks: "Place blocks"
   portaluse: "Portal use"
   pressureplate: "Visitors activate pressure plates"
-  pvp: "PvP"
+  pvp: PvP
   redstone: "Redstone use"
   settingsgeneraltitle: "General Island World Settings"
   settingsgeneraldesc: "General Island World Settings"
@@ -379,7 +370,7 @@ minishop:
   outofstock: "Out Of Stock"
   sell: "Sell(Right click)"
   sellproblem: "You do not have enough [description] to sell."
-  title: "&EMiniShop"
+  title: "MiniShop"
   youbought: "You bought [number] [description] for [price]"
   youcannotafford: "You cannot afford [description]!"
   yousold: "You sold [number] [description] for [price]"
@@ -390,7 +381,7 @@ moblimits:
 nether: 
   spawnisprotected: "The Nether spawn area is protected."
 news: 
-  headline: "[A Skyblock News] While you were offline..."
+  headline: "[AcidIsland News] While you were offline..."
 purge: 
   acidFound: "There are [number] unowned islands. Do '/acid purge unowned confirm' to delete them within 20 seconds."
   allowPurge: "Purge protection removed"
@@ -473,7 +464,7 @@ warps:
   removed: "Welcome sign removed!"
   signRemoved: "Your welcome sign was removed!"
   success: "Welcome sign placed successfully!"
-  title: "Island warps"
+  title: "&eIsland warps"
   warpTip: "Create a warp by placing a sign with [WELCOME] at the top."
   warpToPlayersSign: "Warping to <player>'s welcome sign."
   warpsAvailable: "The following warps are available"

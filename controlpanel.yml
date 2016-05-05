@@ -5,7 +5,7 @@
 # description can include color codes using & and new lines using |
 
 default:
-  panelname: '&1Commands'
+  panelname: '&2Commands'
   buttons:
     0:
       material: GRASS
@@ -55,5 +55,5 @@ default:
     9:
       material: ENCHANTMENT_TABLE
       description: 'Challenges'
-      command: 'asc'
+      command: 'aic'
       nextsection: ''

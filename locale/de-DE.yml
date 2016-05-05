@@ -152,7 +152,7 @@ challenges:
   erroryouaremissing: "Du bist verloren!!!"
   expReward: "Exp Belohnung"
   firstTimeRewards: "Belohnung (Erstes mal)"
-  guititle: "aSkyBlock Herausforderungen"
+  guititle: "AcidIsland Herausforderungen"
   help1: "Benutze /c <name> um Infos über eine Herausforderung zu sehen."
   help2: "Benutze /c complete <name> um eine Herausforderung abzuschliessen."
   incomplete: "Nicht abgeschlossen"
@@ -232,10 +232,15 @@ invite:
   youCanInvite: "Du kannst noch [number] weitere Spieler einladen."
   youCannotInvite: "Du kannst keine weiteren Spieler einladen."
   youHaveJoinedAnIsland: "Du bist einer Insel beigetreten! Benutze /[label] team um die Mitglieder zu sehen."
-island: 
-  cannotTeleport: "Im Fall kannst du dich nicht teleportieren!"
-  donate: "A SkyBlock von tastybento."
+island:
+  donate: "AcidIsland von tastybento."
   donatecolor: "aqua"
+  subtitle: "von tastybento"
+  subtitlecolor: "blue"
+  title: "AcidIsland"
+  titlecolor: "gold"
+  url: "" 
+  cannotTeleport: "Im Fall kannst du dich nicht teleportieren!"
   errorCouldNotCreateIsland: "Insel konnte nicht erstellt werden, bitte melde das einem Teamler."
   errorInvalidPlayer: "Dieser Spieler ist ungültig oder hat keine Insel!"
   errorLevelNotReady: "Du kannst diesen Befehl gerade nicht nutzen! Versuch es in einigen Sekunden."
@@ -273,12 +278,7 @@ island:
   resetTo: "Resetlimit zurückgesetzt!"
   resetWait: "Du musst noch [time] Sekunden warten."
   resetYouHave: "Es sind noch [number] weitere Resets möglich!"
-  subtitle: "von tastybento"
-  subtitlecolor: "blue"
   teleport: "Du wurdest auf deine Insel teleportiert. (/[label] help für mehr Infos)"
-  title: "A SkyBlock"
-  titlecolor: "gold"
-  url: ""
 islandProtected: "Insel ist gesichert!"
 islandguardsettings: 
   TNTdamage: "TNT Schaden"
@@ -374,7 +374,7 @@ minishop:
   outofstock: "Nicht genügend Items!"
   sell: "Verkaufen (Rechtsklick)"
   sellproblem: "Du hast nicht genügend von [description] um es zu verkaufen!"
-  title: MiniShop
+  title: "MiniShop"
   youbought: "§aDu hast §c[number] &b[description] §afür §c[price] §aEuro gekauft!"
   youcannnotafford: "Du hast nicht genügend Geld für [description]!"
   yousold: "Du hast [number] [description] für [price] Euro verkauft!"
@@ -385,7 +385,7 @@ moblimits:
 nether: 
   spawnisprotected: "Der Netherspawn-Bereich ist geschützt."
 news: 
-  headline: "[A Skyblock News] Während du offline warst..."
+  headline: "[AcidIsland News] Während du offline warst..."
 purge: 
   acidFound: "Es gibt [number] unbewohnte Inseln. Tippe '/acid purge unowned confirm' zum entfernen in den nächsten 20 Sekunden."
   allowPurge: "Purge-Schutz entfernt"
@@ -465,7 +465,7 @@ warps:
   removed: "Insel-Warp-Schild entfernt!"
   signRemoved: "Dein Insel-Warp-Schild wurde entfernt!"
   success: "Insel-Warp-Schild erfolgreich erstellt!"
-  title: "Insel Warps"
+  title: "&eInsel Warps"
   warpTip: "&aErstelle ein Warp-Schild mit &c[WELCOME] &ain der obersten Zeile."
   warpToPlayersSign: "Teleportiert dich zum Insel-Warp von: <player>."
   warpsAvailable: "Folgende Insel-Warps sind verfügbar"

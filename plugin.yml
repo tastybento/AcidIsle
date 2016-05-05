@@ -1,312 +1,305 @@
-name: ASkyBlock
-main: com.wasteofplastic.askyblock.ASkyBlock
+name: AcidIsland
+main: com.wasteofplastic.acidisland.ASkyBlock
 version: ${version}
-description: A SkyBlock Plugin
+description: AcidIsland
 author: Tastybento
 depend: [Vault]
 softdepend: [Herochat]
 load: startup
 loadbefore: [Multiverse-Core]
 commands:
-    island:
+    ai:
         description: Main player command
-        aliases: [is, island]
+        aliases: [is, island, ai]
         usage:  |
              /island help
-    asadmin:
+    acid:
         description: Admin commands
         usage:  |
-            /asadmin
-    asc:
+            /acid
+    aic:
         description: Game challenges
-        aliases: [c, challenge, aschallenge, challenges]
+        aliases: [c, challenge, aic, aichallenge, challenges]
         usage:  |  
             /challenge
 permissions:    
-  askyblock.*:
+  acidisland.*:
     default: false
     children:
-      askyblock.island.*:
+      acidisland.island.*:
         children:
-          askyblock.island.go:
+          acidisland.island.go:
             description: Allow teleporting to player island
             default: true
-          askyblock.island.create:
+          acidisland.island.create:
             description: Let the player use the /island command
             default: true
-          askyblock.island.info:
+          acidisland.island.info:
             description: Let the player check their island level
             default: true
-          askyblock.island.topten:
+          acidisland.island.topten:
             description: Let the player see the top ten list
             default: true
-          askyblock.island.sethome:
+          acidisland.island.sethome:
             description: Let the player set their island teleport point
             default: true
-          askyblock.island.challenges:
+          acidisland.island.challenges:
             description: Let the player use the /challenges command
             default: true
-          askyblock.island.warp:
+          acidisland.island.warp:
             description: Let the player use /island warp to warp to a players island
             default: true
-          askyblock.island.addwarp:
+          acidisland.island.addwarp:
             description: Let the player place a Welcome warp sign
             default: true
-          askyblock.island.minishop:
+          acidisland.island.minishop:
             description: Allows usage of the minishop
             default: true
-          askyblock.island.controlpanel:
+          acidisland.island.controlpanel:
             description: Allows usage of the island GUI
             default: true
-          askyblock.island.biomes:
+          acidisland.island.biomes:
             description: Allows biome changing
             default: true
-          askyblock.island.lock:
+          acidisland.island.lock:
             description: Allows island locking
             default: false
-          askyblock.island.expel:
+          acidisland.island.expel:
             description: Allows expelling of visitors
             default: true
-          askyblock.island.ban:
+          acidisland.island.ban:
             description: Allows banning of visitors
             default: false
-          askyblock.island.settings:
+          acidisland.island.settings:
             description: Player can see server settings
             default: true
-          askyblock.island.lang:
+          acidisland.island.lang:
             description: Player can select a language
             default: true
-      askyblock.team.*:
+      acidisland.team.*:
         children:
-          askyblock.team.create:
+          acidisland.team.create:
             description: Let a player invite other players to join a team
             default: true
-          askyblock.team.kick:
+          acidisland.team.kick:
             description: Let a player kick other players
             default: true
-          askyblock.team.makeleader:
+          acidisland.team.makeleader:
             description: Let a player make another player leader of the team
             default: true
-          askyblock.team.join:
+          acidisland.team.join:
             description: Let a player join another player's team
             default: true
-          askyblock.team.chat:
+          acidisland.team.chat:
             description: Allow player to use team chat
             default: true
-      askyblock.command.*:
+      acidisland.command.*:
         description: Event commands will not be run for players with this perm
         default: false
         children:
-          askyblock.command.resetexempt:
+          acidisland.command.resetexempt:
             description: Player is exempt from commands run when island resets
             default: false
-          askyblock.command.leaveexempt:
+          acidisland.command.leaveexempt:
             description: Player is exempt from commands run when they leave or are kicked. Note will not help if player is offline.
             default: false
-          askyblock.command.newexempt:
+          acidisland.command.newexempt:
             description: Player is exempt from commands run when starting an island
             default: false
-          askyblock.command.challengeexempt:
+          acidisland.command.challengeexempt:
             description: Player is exempt from commands run when a challenge is completed
             default: false
-      askyblock.coop:
+      acidisland.coop:
         description: Allows player to use the coop command
         default: false    
-      askyblock.craft.*:
+      acidisland.craft.*:
         children:
-          askyblock.craft.enderchest:
-            description: Allow crafting and use of enderchests in askyblock
+          acidisland.craft.enderchest:
+            description: Allow crafting and use of enderchests in acidisland
             default: false
-          askyblock.craft.dirt:
-            description: Allows tilling of coarse dirt into dirt
-            default: false
-      askyblock.excludetopten:
+      acidisland.excludetopten:
         description: Excludes player from top ten
-        default: false
-      askyblock.nohunger:
+        default: false   
+      acidisland.nohunger:
         description: Excludes player from hunger if on island
-        default: false  
-      askyblock.settings.*:
+        default: false   
+      acidisland.settings.*:
         children:
-          askyblock.settings.allowAnvilUse:
+          acidisland.settings.allowAnvilUse:
             description: Allow player to change this island guard setting
             default: false
-          askyblock.settings.allowArmorStandUse:
+          acidisland.settings.allowArmorStandUse:
             description: Allow player to change this island guard setting
             default: false
-          askyblock.settings.allowBeaconAccess:
+          acidisland.settings.allowBeaconAccess:
             description: Allow player to change this island guard setting
             default: false
-          askyblock.settings.allowBedUse:
+          acidisland.settings.allowBedUse:
             description: Allow player to change this island guard setting
             default: false
-          askyblock.settings.allowBreakBlocks:
+          acidisland.settings.allowBreakBlocks:
             description: Allow player to change this island guard setting
             default: false
-          askyblock.settings.allowBreeding:
+          acidisland.settings.allowBreeding:
             description: Allow player to change this island guard setting
             default: false
-          askyblock.settings.allowBrewing:
+          acidisland.settings.allowBrewing:
             description: Allow player to change this island guard setting
             default: false
-          askyblock.settings.allowBucketUse:
+          acidisland.settings.allowBucketUse:
             description: Allow player to change this island guard setting
             default: false
-          askyblock.settings.allowChestAccess:
+          acidisland.settings.allowChestAccess:
             description: Allow player to change this island guard setting
             default: false
-          askyblock.settings.allowCrafting:
+          acidisland.settings.allowCrafting:
             description: Allow player to change this island guard setting
             default: false
-          askyblock.settings.allowCropTrample:
+          acidisland.settings.allowCropTrample:
             description: Allow player to change this island guard setting
             default: false
-          askyblock.settings.allowDoorUse:
+          acidisland.settings.allowDoorUse:
             description: Allow player to change this island guard setting
             default: false
-          askyblock.settings.allowEnchanting:
+          acidisland.settings.allowEnchanting:
             description: Allow player to change this island guard setting
             default: false
-          askyblock.settings.allowEnderPearls:
+          acidisland.settings.allowEnderPearls:
             description: Allow player to change this island guard setting
             default: false
-          askyblock.settings.allowFurnaceUse:
+          acidisland.settings.allowFurnaceUse:
             description: Allow player to change this island guard setting
             default: false
-          askyblock.settings.allowGateUse:
+          acidisland.settings.allowGateUse:
             description: Allow player to change this island guard setting
             default: false
-          askyblock.settings.allowHorseInvAccess:
+          acidisland.settings.allowHorseInvAccess:
             description: Allow player to change this island guard setting
             default: false
-          askyblock.settings.allowHorseRiding:
+          acidisland.settings.allowHorseRiding:
             description: Allow player to change this island guard setting
             default: false
-          askyblock.settings.allowHurtMobs:
+          acidisland.settings.allowHurtMobs:
             description: Allow player to change this island guard setting
             default: false
-          askyblock.settings.allowLeashUse:
+          acidisland.settings.allowLeashUse:
             description: Allow player to change this island guard setting
             default: false
-          askyblock.settings.allowLeverButtonUse:
+          acidisland.settings.allowLeverButtonUse:
             description: Allow player to change this island guard setting
             default: false
-          askyblock.settings.allowMusic:
+          acidisland.settings.allowMusic:
             description: Allow player to change this island guard setting
             default: false
-          askyblock.settings.allowPlaceBlocks:
+          acidisland.settings.allowPlaceBlocks:
             description: Allow player to change this island guard setting
             default: false
-          askyblock.settings.allowPortalUse:
+          acidisland.settings.allowPortalUse:
             description: Allow player to change this island guard setting
             default: false
-          askyblock.settings.allowPressurePlate:
+          acidisland.settings.allowPressurePlate:
             description: Allow player to change this island guard setting
             default: false
-          askyblock.settings.allowPvP:
+          acidisland.settings.allowPvP:
             description: Allow player to change this island guard setting
             default: false
-          askyblock.settings.allowNetherPvP:
+          acidisland.settings.allowNetherPvP:
             description: Allow player to change this island guard setting
             default: false
-          askyblock.settings.allowRedStone:
+          acidisland.settings.allowRedStone:
             description: Allow player to change this island guard setting
             default: false
-          askyblock.settings.allowShearing:
+          acidisland.settings.allowShearing:
             description: Allow player to change this island guard setting
             default: false
-      askyblock.mod.*:
+      acidisland.mod.*:
         children:
-          askyblock.mod.topten:
+          acidisland.mod.topten:
             description: Let a moderator update the top ten list
             default: op
-          askyblock.mod.info:
+          acidisland.mod.info:
             description: Let a moderator see info on a player
             default: op
-          askyblock.mod.challenges:
+          acidisland.mod.challenges:
             description: Let a moderator access challenge commands 
             default: op
-          askyblock.mod.noburn:
+          acidisland.mod.noburn:
             description: Gives mod immunity to acid
             default: false
-          askyblock.mod.resethome:
+          acidisland.mod.resethome:
             description: Allows setting or reseting of a player's home position
             default: op
-          askyblock.mod.clearreset:
+          acidisland.mod.clearreset:
             description: Allow clearing of island reset limit
             default: false
-          askyblock.mod.tp:
+          acidisland.mod.tp:
             description: Allows teleport to an island
             default: op
-          askyblock.mod.tpnether:
+          acidisland.mod.tpnether:
             description: Allows teleport to a nether island
             default: op
-          askyblock.mod.bypassprotect:
+          acidisland.mod.bypassprotect:
             description: Allow moderator to bypass island protection
             default: op
-          askyblock.mod.setbiome:
+          acidisland.mod.setbiome:
             description: Allows setting player island biomes
             default: op
-          askyblock.mod.topbreeders:
+          acidisland.mod.topbreeders:
             description: Lists most populated islands current loaded
             default: op
-          askyblock.mod.lock:
+          acidisland.mod.lock:
             description: Locks or unlocks an island
             default: op
-          askyblock.mod.bypasslock:
+          acidisland.mod.bypasslock:
             description: Bypasses an island lock
             default: op
-          askyblock.mod.signadmin:
+          acidisland.mod.signadmin:
             description: Enables warp sign admin commands
             default: op
-          askyblock.mod.spy:
+          acidisland.mod.spy:
             description: Spy on team chats
             default: false
-          askyblock.mod.removesign:
+          acidisland.mod.removesign:
             description: Gives ability to remove warp signs
             default: false
-          askyblock.mod.team:
+          acidisland.mod.team:
             description: Enables modification of teams via kick and add commands
             default: false
-      askyblock.admin.*:
+      acidisland.admin.*:
         children:
-          askyblock.admin.clearresetall:
-            description: Allow clearing of island reset limit of all players
+          acidisland.mod.clearresetall:
+            description: Allow clearing of island reset limit for all players
             default: op
-          askyblock.admin.reload:
+          acidisland.admin.reload:
             description: Reload the config.yml
             default: op
-          askyblock.admin.delete:
+          acidisland.admin.delete:
             description: Let a player completely remove a player (including island)
             default: op
-          askyblock.admin.deleteisland:
+          acidisland.admin.deleteisland:
             description: Let a player completely remove the island the player is on
             default: op
-          askyblock.admin.register:
+          acidisland.admin.register:
             description: Let a player register the nearest island to another player.
             default: op
-          askyblock.admin.unregister:
+          acidisland.admin.unregister:
             description: Removes a player from an island without deleting the island blocks.
             default: op
-          askyblock.admin.purge:
+          acidisland.admin.purge:
             description: Let a player purge old islands.
             default: op
-          askyblock.admin.noburn:
+          acidisland.admin.noburn:
             description: Gives admin immunity to acid
             default: false
-          askyblock.admin.setspawn:
+          acidisland.admin.setspawn:
             description: Allows use of spawn tools
             default: op
-          askyblock.admin.setrange:
+          acidisland.admin.setrange:
             description: Allows setting of island protection range
             default: op
-          askyblock.admin.topbreeders:
+          acidisland.admin.topbreeders:
             description: Lists most populated islands current loaded
             default: op
-          askyblock.admin.reserve:
-            description: Reserves an empty spot for a player's next island
-            default: op
-          askyblock.admin.settingsreset:
+          acidisland.admin.settingsreset:
             description: Resets all the islands to default protection settings
             default: op
-            

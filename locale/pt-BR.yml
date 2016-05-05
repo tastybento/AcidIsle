@@ -150,7 +150,7 @@ challenges:
   erroryouaremissing: Faltam
   expReward: "Prêmio em exp."
   firstTimeRewards: "Prêmio(s) para a primeira vez"
-  guititle: "Desafios aSkyBlock"
+  guititle: "Desafios AcidIsland"
   help1: "Use /c <name> para ver inforamações sobre um desafio."
   help2: "Use /c complete <name> para tentar completar esse desafio."
   incomplete: Incompleto
@@ -232,8 +232,7 @@ invite:
   youHaveJoinedAnIsland: "Você agora é membro dessa ilha! Use /[label] team para ver os outros membros."
 island: 
   cannotTeleport: "Você não pode se teleportar enquanto está caindo!"
-  donate: "Bem-vindo ao A SkyBlock, por tastybento."
-  donatecolor: "aqua"
+  donate: "Bem-vindo ao AcidIsland, por tastybento."
   errorCouldNotCreateIsland: "Não foi possível criar a sua ilha. Por favor, contate um moderador do servidor."
   errorInvalidPlayer: "Esse jogador não é válido, ou não possui uma ilha!"
   errorLevelNotReady: "Você não pode usar esse comando no momento. Tente novamente em alguns segundos."
@@ -272,10 +271,8 @@ island:
   resetWait: "Você precisa esperar [time] segundos antes de fazer isso novamente."
   resetYouHave: "Você pode reinicializar mais [number] vezes."
   subtitle: "por tastybento"
-  subtitlecolor: "blue"
   teleport: "Teleportando você para a sua ilha. (/[label] help para mais informações)"
-  title: "A SkyBlock"
-  titlecolor: "gold"
+  title: "AcidIsland"
   url: ""
 islandProtected: "Ilha protegida."
 islandguardsettings: 
@@ -372,7 +369,7 @@ minishop:
   outofstock: "Sem estoque"
   sell: "Vender(Clique botão direito)"
   sellproblem: "Você não tem [description] para vender."
-  title: "&EMiniShop"
+  title: "MiniShop"
   youbought: "Você comprou [number] [description] por [price]"
   youcannotafford: "Você não tem dinheiro suficiente para comprar [description]!"
   yousold: "Você vendeu [number] [description] por [price]"
@@ -383,7 +380,7 @@ moblimits:
 nether: 
   spawnisprotected: "A área de spawn no Nether é protegida."
 news: 
-  headline: "[A Skyblock News] Enquanto você estava offline..."
+  headline: "[AcidIsland News] Enquanto você estava offline..."
 purge: 
   acidFound: "Existem [number] ilhas sem dono. Use '/acid purge unowned confirm' para removê-las dentro de 20 segundos."    
   allowPurge: "A proteção contra purga foi removida"
@@ -463,7 +460,7 @@ warps:
   removed: "Placa de boas-vindas removida!"
   signRemoved: "Sua placa de boas-vindas foi removida!"
   success: "Placa de boas-vindas colocada com sucesso!"
-  title: "Warps para as ilhas"  
+  title: "&eWarps para as ilhas"  
   warpTip: "Para criar um ponto de warp, basta colocar uma placa com [Bem-vindo] na primeira linha."
   warpToPlayersSign: "Fazer warp para a placa de boas-vindas do jogador <player>."
   warpsAvailable: "Os seguintes pontos de warp estão disponíveis"
