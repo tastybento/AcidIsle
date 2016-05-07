@@ -278,6 +278,7 @@ public class IslandBlock {
      * @param tileData
      */
     public void setSpawnerType(Map<String, Tag> tileData) {
+        //Bukkit.getLogger().info("DEBUG: " + tileData.toString());
         String creatureType = "";        
         if (tileData.containsKey("EntityId")) {
             creatureType = ((StringTag) tileData.get("EntityId")).getValue().toUpperCase();
